@@ -19,6 +19,10 @@
     Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
   when: providers.stdout is not search("NuGet")
 
+- name: Install Powershell Yaml
+  win_shell: |
+    Install-Module -Name powershell-yaml -AcceptLicense -Scope AllUsers -Force
+
 - name: Install Atomic Red Team
   win_shell: |
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main" -Name "DisableFirstRunCustomize" -Value 2

@@ -28,9 +28,9 @@
 - block:
     - name: Copy Sysmon template
       win_copy:
-        src: "SwiftOnSecurity.xml"
-        dest: C:\Program Files\ansible\SwiftOnSecurity.xml
+        src: "sysmon-modular-default.xml"
+        dest: C:\Program Files\ansible\sysmon-modular-default.xml
 
     - name: install sysmon with defined config
-      win_command: '"C:\Program Files\ansible\sysmon\sysmon64.exe" -accepteula -i "C:\Program Files\ansible\SwiftOnSecurity.xml"'
+      win_command: '"C:\Program Files\ansible\sysmon\sysmon64.exe" -accepteula -i "C:\Program Files\ansible\sysmon-modular-default.xml"'
 

@@ -3,7 +3,7 @@ dependencies: []
 
 galaxy_info:
   role_name: ludus_ar_windows
-  author: P4T12ICK
+  author: droid4n6
   description: An Ansible Role that installs a Attack Range Windows Server.
   company: Splunk
   license: GPLv3
