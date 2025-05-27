@@ -21,7 +21,7 @@
 
 - name: Install Powershell Yaml
   win_shell: |
-    Install-Module -Name powershell-yaml -AcceptLicense -Scope AllUsers -Force
+    Install-Module -Name powershell-yaml -Scope AllUsers -Force
 
 - name: Install Atomic Red Team
   win_shell: |
