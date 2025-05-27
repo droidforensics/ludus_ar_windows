@@ -4,4 +4,3 @@
   win_chocolatey:
     name: 'chocolatey'
     state: present
-    version: 'latest'
