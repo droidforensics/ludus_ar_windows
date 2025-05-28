@@ -49,4 +49,4 @@
     
     - name: Update Sysmon configuration
       win_command: '"C:\Program Files\ansible\sysmon\sysmon64.exe" -accepteula -c "C:\Program Files\ansible\sysmon-modular-default.xml"'
-      when: (not sysmon_svc_state.exists) and (not sysmon64_svc_state.exists)
+      
