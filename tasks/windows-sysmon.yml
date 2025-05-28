@@ -33,14 +33,20 @@
 
     - name: Check if Sysmon is installed
       win_service_info:
-        name: Sysmon
+        name: sysmon
       register: sysmon_svc_state
+      ignore_errors: yes
+    
+    - name: Check if Sysmon64 is installed
+      win_service_info:
+        name: sysmon64
+      register: sysmon64_svc_state
       ignore_errors: yes
 
     - name: Install Sysmon if not already installed
       win_command: '"C:\Program Files\ansible\sysmon\sysmon64.exe" -accepteula -i "C:\Program Files\ansible\sysmon-modular-default.xml"'
-      when: not sysmon_svc_state.exists
+      when: (not sysmon_svc_state.exists) and (not sysmon64_svc_state.exists)
     
     - name: Update Sysmon configuration
       win_command: '"C:\Program Files\ansible\sysmon\sysmon64.exe" -accepteula -c "C:\Program Files\ansible\sysmon-modular-default.xml"'
-      when: sysmon_svc_state.exists
+      when: (not sysmon_svc_state.exists) and (not sysmon64_svc_state.exists)
